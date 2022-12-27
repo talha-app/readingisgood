@@ -1,0 +1,383 @@
+{
+	"info": {
+		"_postman_id": "6759e84d-968d-462e-8d53-2a7a6521b5ed",
+		"name": "ReadingIsGood",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10866621"
+	},
+	"item": [
+		{
+			"name": "AuthenticationController",
+			"item": [
+				{
+					"name": "generateToken",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://readingisgood-production.up.railway.app/generatetoken",
+							"protocol": "https",
+							"host": [
+								"readingisgood-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"generatetoken"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "BookController",
+			"item": [
+				{
+					"name": "createNewBook",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY3MjE2OTQzNywiaWF0IjoxNjcyMTUxNDM3fQ.YmfPl8sSbJwXh9O6ZX6chCjbTp-qtPGc2Oy1Fj9NOt_w4AX28BM6ocNygt6m20gUctbmgWI_uGyTkTEhCo6Ctw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"author\": \"author\",\r\n  \"title\": \"title\",\r\n  \"price\": 5.46\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://readingisgood-production.up.railway.app/book/create",
+							"protocol": "https",
+							"host": [
+								"readingisgood-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"book",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateStock",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY3MjE2OTQzNywiaWF0IjoxNjcyMTUxNDM3fQ.YmfPl8sSbJwXh9O6ZX6chCjbTp-qtPGc2Oy1Fj9NOt_w4AX28BM6ocNygt6m20gUctbmgWI_uGyTkTEhCo6Ctw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"bookId\": 1,\r\n  \"stockCount\": 12\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://readingisgood-production.up.railway.app/book/update",
+							"protocol": "https",
+							"host": [
+								"readingisgood-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"book",
+								"update"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CustomerController",
+			"item": [
+				{
+					"name": "createNewCustomer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"admin\",\r\n  \"password\": \"password\",\r\n  \"name\": \"John\",\r\n  \"email\": \"john@smith.com\",\r\n  \"surname\": \"Smith\",\r\n  \"phone\": 90555555555,\r\n  \"address\": {\r\n    \"address\": \"Besiktas\",\r\n    \"city\": \"Istanbul\",\r\n    \"country\": \"Turkey\",\r\n    \"postalCode\": 12345\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://readingisgood-production.up.railway.app/customer/create",
+							"protocol": "https",
+							"host": [
+								"readingisgood-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"customer",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOrdersWithPaging",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY3MjE2OTQzNywiaWF0IjoxNjcyMTUxNDM3fQ.YmfPl8sSbJwXh9O6ZX6chCjbTp-qtPGc2Oy1Fj9NOt_w4AX28BM6ocNygt6m20gUctbmgWI_uGyTkTEhCo6Ctw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"page\": 0,\r\n    \"size\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://readingisgood-production.up.railway.app/customer/listorders",
+							"protocol": "https",
+							"host": [
+								"readingisgood-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"customer",
+								"listorders"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "OrderController",
+			"item": [
+				{
+					"name": "createNewOrder",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY3MjE2OTQzNywiaWF0IjoxNjcyMTUxNDM3fQ.YmfPl8sSbJwXh9O6ZX6chCjbTp-qtPGc2Oy1Fj9NOt_w4AX28BM6ocNygt6m20gUctbmgWI_uGyTkTEhCo6Ctw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bookOrders\": [\r\n        {\r\n            \"bookId\": 5,\r\n            \"count\": 1\r\n        },\r\n                {\r\n            \"bookId\": 8,\r\n            \"count\": 3\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://readingisgood-production.up.railway.app/order/create",
+							"protocol": "https",
+							"host": [
+								"readingisgood-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"order",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOrderById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY3MjE2OTQzNywiaWF0IjoxNjcyMTUxNDM3fQ.YmfPl8sSbJwXh9O6ZX6chCjbTp-qtPGc2Oy1Fj9NOt_w4AX28BM6ocNygt6m20gUctbmgWI_uGyTkTEhCo6Ctw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"orderId\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://readingisgood-production.up.railway.app/order/detail",
+							"protocol": "https",
+							"host": [
+								"readingisgood-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"order",
+								"detail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listOrdersByDate",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY3MjE2OTQzNywiaWF0IjoxNjcyMTUxNDM3fQ.YmfPl8sSbJwXh9O6ZX6chCjbTp-qtPGc2Oy1Fj9NOt_w4AX28BM6ocNygt6m20gUctbmgWI_uGyTkTEhCo6Ctw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"startDate\": \"24-12-2022 22:45\",\r\n    \"endDate\": \"27-12-2022 22:48\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://readingisgood-production.up.railway.app/order/listbydate",
+							"protocol": "https",
+							"host": [
+								"readingisgood-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"order",
+								"listbydate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "StatisticsCpntroller",
+			"item": [
+				{
+					"name": "generateMonthlyStatistics",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY3MjE2OTQzNywiaWF0IjoxNjcyMTUxNDM3fQ.YmfPl8sSbJwXh9O6ZX6chCjbTp-qtPGc2Oy1Fj9NOt_w4AX28BM6ocNygt6m20gUctbmgWI_uGyTkTEhCo6Ctw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://readingisgood-production.up.railway.app/statistics/monthly",
+							"protocol": "https",
+							"host": [
+								"readingisgood-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"statistics",
+								"monthly"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
